@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "lib": [
+      "es2018"
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "target": "es2015"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

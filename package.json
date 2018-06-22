@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "name": "exar",
+  "version": "0.0.0",
+  "homepage": "https://ymkz.co/work#exar",
+  "description": "A easy/experimental AR app.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ymkz/exar"
+  },
+  "bugs": {
+    "url": "https://github.com/ymkz/exar/issues"
+  },
+  "scripts": {
+    "lint": "tslint --project .",
+    "lint:fix": "tslint --fix --project ."
+  },
+  "dependencies": {
+    "expo": "^28.0.0",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@types/expo": "^27.0.3",
+    "@types/react": "^16.4.1",
+    "@types/react-native": "^0.55.22",
+    "husky": "^1.0.0-rc.9",
+    "prettier": "^1.13.5",
+    "react-native-typescript-transformer": "^1.2.10",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^2.9.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --edit $GIT_PARAMS",
+      "pre-commit": "yarn lint",
+      "post-merge": "(git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null) && yarn || :"
+    }
+  }
+}
